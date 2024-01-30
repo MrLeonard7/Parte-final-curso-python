@@ -48,10 +48,10 @@ def process_of_buy(driver_page):
 def complete_formulary(driver_page):
     facturation_formulary = driver_page.find_element(by=By.CLASS_NAME, value="woocommerce-billing-fields")
     facturation_formulary.find_element(by=By.NAME, value="billing_first_name").send_keys("David")
-    facturation_formulary.find_element(by=By.NAME, value="billing_last_name").send_keys("Becerra Panqueva")
-    facturation_formulary.find_element(by=By.NAME, value="billing_id_cliente").send_keys("1193476186")
-    facturation_formulary.find_element(by=By.NAME, value="billing_address_1").send_keys("Tv.49C#73Sur-12")
-    facturation_formulary.find_element(by=By.NAME, value="billing_address_2").send_keys("Sierra morena")
+    facturation_formulary.find_element(by=By.NAME, value="billing_last_name").send_keys("Becerra ")
+    facturation_formulary.find_element(by=By.NAME, value="billing_id_cliente").send_keys("1122554499")
+    facturation_formulary.find_element(by=By.NAME, value="billing_address_1").send_keys("Tv.50C#90Sur-24")
+    facturation_formulary.find_element(by=By.NAME, value="billing_address_2").send_keys("Alamos")
     sleep(3)
     driver_page.find_element(by=By.XPATH, value='//*[@id="billing_city_field"]/span/span[1]/span').click()
     driver_page.find_element(by=By.XPATH, value='/html/body/span[2]/span/span[2]/ul/li[2]').click()
@@ -67,7 +67,7 @@ def accept_terms_and_buy(driver_page):
 
 
 def main():
-    # Pedimos al usuario que prducto va ha comprar
+    # Definimos la url del producto que vamos ha comprar
     url_product = create_url()
     # Conectamos con la pagina
     page_product = connection_to_page(url_product)
@@ -86,7 +86,6 @@ def main():
         complete_formulary(driver_page)
         # Aceptamos la compra y realizamos la compra
         accept_terms_and_buy(driver_page)
-
 
 
 if __name__ == '__main__':
