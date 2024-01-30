@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 
 def create_url():
-    url = "https://speedlogic.com.co/producto/tarjeta-de-video-asus-geforce-gt-1030-ddr5-oc-phoenix-1fan-2-gigas/"
+    url = "https://speedlogic.com.co/producto/monitor-led-lg-27-full-hd-ips-100-hz-27mr400-b/"
     return url
 
 
@@ -17,7 +17,7 @@ def connection_to_page(url):
 
 def review_stock(page):
     while True:
-        buy_zone = page.html.find("#product-23980")
+        buy_zone = page.html.find("#product-28538")
         if len(buy_zone) > 0:
             print("HAY STOCK")
             return True
